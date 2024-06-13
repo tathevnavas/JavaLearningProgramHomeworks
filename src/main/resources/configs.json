@@ -1,0 +1,30 @@
+[
+  {
+    "user": {
+      "name" : "John"
+    },
+    "accessPaths" : {
+      "Accessed Path 1" : "TRUE",
+      "Accessed Path 2" : "FALSE"
+    }
+  },
+  {
+    "user": {
+      "name" : "Kate"
+    },
+    "accessPaths" : {
+      "Accessed Path 1" : "FALSE",
+      "Accessed Path 2" : "FALSE"
+    }
+  },
+  {
+    "user": {
+      "name" : "Sarah"
+    },
+    "accessPaths" : {
+      "Accessed Path 1" : "TRUE",
+      "Accessed Path 2" : "TRUE"
+    }
+  }
+]
+

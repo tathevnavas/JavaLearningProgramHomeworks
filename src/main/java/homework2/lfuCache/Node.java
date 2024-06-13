@@ -6,7 +6,7 @@ public class Node {
     Node next;
     Node prev;
     public Node(int key, String val){
-        this.key = key;
+        //this.key = key;
         this.val = val;
     }
 
