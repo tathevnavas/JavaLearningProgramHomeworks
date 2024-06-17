@@ -7,7 +7,7 @@ public class StopState implements Player{
 
     @Override
     public void playOrPause(MusicPLayer musicPLayer) {
-        System.out.println("Playing the " + musicPLayer.getCurrentTrack() + " track back.");
+        System.out.println("Playing the " + musicPLayer.getCurrentTrack().getTrackName() + " track.");
         musicPLayer.setPlayerState(new OnState());
     }
 

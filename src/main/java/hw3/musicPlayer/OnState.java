@@ -2,12 +2,17 @@ package hw3.musicPlayer;
 
 public class OnState implements Player{
     public OnState(){
-        System.out.println("MusicPLayer is playing now.");
+        System.out.println("Music player is on now.");
     }
     @Override
     public void playOrPause(MusicPLayer musicPLayer) {
-        System.out.println("Stopping " + musicPLayer.getCurrentTrack().getTrackName());
-        musicPLayer.setPlayerState(new StopState());
+        if(musicPLayer.getPlayerState().toString().contains("OnState")){
+            musicPLayer.setPlayerState(new StopState());
+            System.out.println("Stopped " + musicPLayer.getCurrentTrack().getTrackName() + " track.");
+        } else if (musicPLayer.getPlayerState().toString().contains("StopState")){
+            musicPLayer.setPlayerState(new OnState());
+            System.out.println("Playing " + musicPLayer.getCurrentTrack().getTrackName() + " track.");
+        }
     }
 
     @Override

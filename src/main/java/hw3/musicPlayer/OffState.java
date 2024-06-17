@@ -2,11 +2,11 @@ package hw3.musicPlayer;
 
 public class OffState implements Player {
     public OffState(){
-        System.out.println("No music is playing now.");
+        System.out.println("The player was off.");
     }
     @Override
     public void playOrPause(MusicPLayer musicPLayer) {
-        System.out.println("The player was off. Going from OFF to ON.");
+        System.out.println("Going from OFF to ON.");
         musicPLayer.setPlayerState(new OnState());
     }
 

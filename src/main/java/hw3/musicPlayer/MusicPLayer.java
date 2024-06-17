@@ -40,6 +40,7 @@ public class MusicPLayer {
     }
 
     public void next() {
+        currentState.playOrPause(this);
         var i = playlist.indexOf(currentTrack);
         if (i > playlist.size() - 1) {
             currentTrack = playlist.get(0);
@@ -50,6 +51,7 @@ public class MusicPLayer {
     }
 
     public void previous() {
+        currentState.playOrPause(this);
         var i = playlist.indexOf(currentTrack);
         if (i > 0) {
             currentTrack = playlist.get(i - 1);
