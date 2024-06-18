@@ -31,4 +31,10 @@ public class OnState implements Player{
         musicPLayer.getPlayerState().stop(musicPLayer);
         musicPLayer.previous();
     }
+
+    @Override
+    public void repeat(MusicPLayer musicPLayer) {
+        playOrPause(musicPLayer);//this is to stop current playing
+        playOrPause(musicPLayer);// this is to restart the stopped playing
+    }
 }

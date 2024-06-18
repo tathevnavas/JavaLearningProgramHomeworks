@@ -5,7 +5,8 @@ public interface Player {
     void stop(MusicPLayer musicPLayer);
     void next(MusicPLayer musicPLayer);
     void previous(MusicPLayer musicPLayer);
+    void repeat(MusicPLayer musicPLayer);
     default void turnOff(){
         System.out.println("Turning off the player.");
-    };
+    }
 }

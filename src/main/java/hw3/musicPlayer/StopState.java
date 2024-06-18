@@ -25,4 +25,9 @@ public class StopState implements Player{
     public void previous(MusicPLayer musicPLayer) {
         musicPLayer.previous();
     }
+
+    @Override
+    public void repeat(MusicPLayer musicPLayer) {
+        playOrPause(musicPLayer);
+    }
 }

@@ -35,15 +35,20 @@ public class MusicPLayer {
         currentState.playOrPause(this);
     }
 
+    public void repeat(){
+        currentState.repeat(this);
+    }
+
     public void stop() {
-        currentState.playOrPause(this);
+        currentState.stop(this);
     }
 
     public void next() {
         currentState.playOrPause(this);
         var i = playlist.indexOf(currentTrack);
-        if (i > playlist.size() - 1) {
+        if (i == playlist.size() - 1) {
             currentTrack = playlist.get(0);
+            System.out.println("Replaying first track: " + playlist.get(0).getTrackName());
         } else {
             currentTrack = playlist.get(i + 1);
         }
@@ -55,6 +60,8 @@ public class MusicPLayer {
         var i = playlist.indexOf(currentTrack);
         if (i > 0) {
             currentTrack = playlist.get(i - 1);
+        } else {
+            System.out.println("Already on the first track.");
         }
         currentState.playOrPause(this);
     }
