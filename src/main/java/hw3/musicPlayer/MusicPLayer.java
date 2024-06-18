@@ -7,19 +7,19 @@ import java.util.NoSuchElementException;
 public class MusicPLayer {
     List<Music> playlist;
     Music currentTrack;
-    private Player currentState;
+    private PlayerState currentState;
 
-    public MusicPLayer(ArrayList<Music> playlist) {
+    public MusicPLayer(List<Music> playlist) {
         this.playlist = playlist;
         setFirstTrack();
-        currentState = new OffState();
+        currentState = new OffState(this);
     }
 
-    public Player getPlayerState() {
+    public PlayerState getPlayerState() {
         return currentState;
     }
 
-    public void setPlayerState(Player player) {
+    public void setPlayerState(PlayerState player) {
         this.currentState = player;
     }
 
@@ -32,19 +32,19 @@ public class MusicPLayer {
     }
 
     public void play() {
-        currentState.playOrPause(this);
+        currentState.playOrPause();
     }
 
     public void repeat(){
-        currentState.repeat(this);
+        currentState.repeat();
     }
 
     public void stop() {
-        currentState.stop(this);
+        currentState.stop();
     }
 
     public void next() {
-        currentState.playOrPause(this);
+        currentState.playOrPause();
         var i = playlist.indexOf(currentTrack);
         if (i == playlist.size() - 1) {
             currentTrack = playlist.get(0);
@@ -52,18 +52,18 @@ public class MusicPLayer {
         } else {
             currentTrack = playlist.get(i + 1);
         }
-        currentState.playOrPause(this);
+        currentState.playOrPause();
     }
 
     public void previous() {
-        currentState.playOrPause(this);
+        currentState.playOrPause();
         var i = playlist.indexOf(currentTrack);
         if (i > 0) {
             currentTrack = playlist.get(i - 1);
         } else {
             System.out.println("Already on the first track.");
         }
-        currentState.playOrPause(this);
+        currentState.playOrPause();
     }
 
     private void setFirstTrack() {

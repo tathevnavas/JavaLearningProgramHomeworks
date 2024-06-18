@@ -5,14 +5,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import hw3.musicPlayer.Music;
 import hw3.musicPlayer.MusicPLayer;
 
 public class OffStateTests extends BaseTest{
@@ -45,6 +38,7 @@ public class OffStateTests extends BaseTest{
     public void VerifyRepeat(){
         MusicPLayer musicPLayer = new MusicPLayer(playlist);
         musicPLayer.repeat();
+
         Assert.assertTrue("Music player is not off actually.", musicPLayer.getPlayerState().toString().contains("OffState"));
     }
 }
