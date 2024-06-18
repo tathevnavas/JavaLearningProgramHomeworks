@@ -1,27 +1,29 @@
 package hw3.musicPlayer;
 
-public class OffState implements Player {
-    public OffState(){
-        System.out.println("The player was off.");
+public class OffState implements PlayerState {
+
+    private MusicPlayer musicPLayer;
+
+    public OffState(MusicPlayer musicPLayer) {
+        this.musicPLayer = musicPLayer;
+        System.out.println("The player is off.");
     }
+
     @Override
-    public void playOrPause(MusicPLayer musicPLayer) {
+    public void playOrPause() {
         System.out.println("Going from OFF to ON.");
-        musicPLayer.setPlayerState(new OnState());
+        musicPLayer.setPlayerState(new PlayingState(musicPLayer));
     }
 
     @Override
-    public void stop(MusicPLayer musicPLayer) {
-        System.out.println("The player is turned off.");
+    public void stop() {
     }
 
     @Override
-    public void next(MusicPLayer musicPLayer) {
-        System.out.println("The player is turned off.");
+    public void next() {
     }
 
     @Override
-    public void previous(MusicPLayer musicPLayer) {
-        System.out.println("The player is turned off.");
+    public void previous() {
     }
 }

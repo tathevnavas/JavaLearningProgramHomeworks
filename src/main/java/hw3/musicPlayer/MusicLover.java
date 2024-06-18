@@ -5,27 +5,20 @@ import java.util.List;
 
 public class MusicLover {
     public static void main(String[] args) {
-        List<Music> playlist = new ArrayList<>(){
-            {
-                add(new Music("I would rather go blind"));
-                add(new Music("Ain't no way"));
-                add(new Music("I found a love"));
-            }
-        };
+        List<Music> playlist = new ArrayList();
+        playlist.add(new Music("I would rather go blind"));
+        playlist.add(new Music("Ain't no way"));
+        playlist.add(new Music("I found a love"));
 
-        var playMusic = new MusicPLayer((ArrayList<Music>) playlist);
-        playMusic.play();
-        System.out.println("----" + playMusic.getPlayerState());
-        playMusic.stop();
-        System.out.println("----" + playMusic.getPlayerState());
-        playMusic.play();
-        System.out.println("----" + playMusic.getPlayerState());
+        var playMusic = new MusicPlayer(playlist);
+        playMusic.setOnRepeat();
+        playMusic.playOrPause();
+        playMusic.playOrPause();
+        playMusic.playOrPause();
         playMusic.next();
-        System.out.println("----" + playMusic.getPlayerState());
         playMusic.next();
-        System.out.println("----" + playMusic.getPlayerState());
+        playMusic.next();
         playMusic.previous();
-        System.out.println("----" + playMusic.getPlayerState());
         playMusic.stop();
     }
 }
