@@ -22,7 +22,7 @@ public class OffStateTests extends BaseTest{
     public void verifyPlayWhenPlayerIsOff(){
         MusicPLayer musicPLayer = new MusicPLayer(playlist);
         musicPLayer.play();
-        Assert.assertTrue("Music player is not on actually.", musicPLayer.getPlayerState().toString().contains("OnState"));
+        Assert.assertTrue("Music player is not on actually.", musicPLayer.getPlayerState().toString().contains("PlayingState"));
     }
 
     @Test

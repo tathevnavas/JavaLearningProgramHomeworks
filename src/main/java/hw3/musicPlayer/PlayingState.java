@@ -1,8 +1,8 @@
 package hw3.musicPlayer;
 
-public class OnState implements PlayerState {
+public class PlayingState implements PlayerState {
     private MusicPLayer player;
-    public OnState(MusicPLayer player){
+    public PlayingState(MusicPLayer player){
         this.player = player;
         System.out.println(player.getCurrentTrack().getTrackName() + " music is playing now.");
     }

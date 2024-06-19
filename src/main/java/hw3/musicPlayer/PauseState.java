@@ -10,7 +10,7 @@ public class PauseState implements PlayerState {
     @Override
     public void playOrPause() {
         System.out.println("Playing the " + player.getCurrentTrack().getTrackName() + " track.");
-        player.setPlayerState(new OnState(player));
+        player.setPlayerState(new PlayingState(player));
     }
 
     @Override

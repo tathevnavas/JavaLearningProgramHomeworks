@@ -9,8 +9,7 @@ public class OffState implements PlayerState {
     @Override
     public void playOrPause() {
         System.out.println("Going from OFF to ON.");
-        player.setPlayerState(new OnState(player));
-        player.play();
+        player.setPlayerState(new PlayingState(player));
     }
 
     @Override

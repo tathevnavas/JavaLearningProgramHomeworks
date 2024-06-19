@@ -5,8 +5,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import hw3.musicPlayer.MusicPLayer;
+import hw3.musicPlayer.PauseState;
 
-public class OnStateTests extends BaseTest{
+public class PlayingStateTests extends BaseTest{
     @Test
     @DisplayName("Play next track test")
     public void verifyNextPlay(){
@@ -55,5 +56,14 @@ public class OnStateTests extends BaseTest{
         musicPLayer.play();
         musicPLayer.repeat();
         Assertions.assertTrue(musicPLayer.getCurrentTrack().getTrackName().equals("I would rather go blind"), musicPLayer.getCurrentTrack().getTrackName() + " track is playing now.");
+    }
+
+    @Test
+    @DisplayName("Pause track test")
+    public void VerifyPause(){
+        MusicPLayer musicPLayer = new MusicPLayer(playlist);
+        musicPLayer.play();
+        musicPLayer.stop();
+        Assertions.assertInstanceOf(PauseState.class, musicPLayer.getPlayerState().getClass());
     }
 }
